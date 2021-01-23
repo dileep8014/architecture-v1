@@ -11,6 +11,24 @@ This series is dedicated to you, well especially most developers who want to sta
 
 In this first project tho, we will start exploring the most important concepts and patterns that you will have to learn in order to begin your journey in building microservices by creating an **e-commerce** application.
 
+## By Definition
+
+Ok, let's start by defining what are microservices. The Microservices Architecture is a sub-architectural style of distributed-systems which involves breaking your application into a collection of individual, self-contained services, which are communicating between them through network calls. ( Mainly just how Andrew Tannenbaum said: "just a bunch of machines which are communication over a network") simple enough huh ?.
+
+The main characteristics of an correct microservice oriented architecture are:
+
+- **SR** (Single Responsabiliy) each microservice has only one job, providing a cohesive set of functionalities built around an particular business domain. I think this term is very familiar to you, is the same one of the five *SOLID* concepts you maybe studied in Object Oriented Programming.
+
+- **Loosely Coupled** Coupling is the deggree of independence between multiple software components (basically is shows how closelly these components are). Loose Coupling states that two components know very little about each other, they are highly detached and can work independenly in a software system. *Pssst remember low coupling is always a best practice to apply when building good software.* 
+
+- **Independent Deployability** This one was a little bit hard to understand and always brought me into confusion. It bassically says that we can independently deploy one service in every desired environment without affectiv other services in our system. Making each service independent deployable will lower the chance of breaking your system by impacting other services. To guarantee this we should ensure first that our services are *loosely coupled*.
+
+Each microservice encapsulates a set of functionalities which were modeled around some business domain ( which is actually just the sphere of activities that software should perform) exposing this logic should only be done through some well defined network endpoints. 
+
+### Benefits
+
+### Drawbacks
+
 ## References
 
 Below you can find some of the best learning materials which I encountered during my daily searches ( both books and tutorials). I've filtered them so you can benefit from the most usefull and notable papers.
