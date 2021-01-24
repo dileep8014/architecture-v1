@@ -1,7 +1,7 @@
 # architecture-v1
 Dedicated to people who want to learn microservices based on my personal notes and experiences.
 
-## Introduction
+# Introduction
 
 Microservices has become a buzzword in today's industry. Everybody would like to follow this architecture and apply it in their business with enough confidence to consider that it fits them without understanding the full requirements and drawbacks they generate. 
 
@@ -27,7 +27,95 @@ Each microservice encapsulates a set of functionalities which were modeled aroun
 
 ### Benefits
 
+- **Flexibility** 
+
+    When it comes to flexibility, microservices have an open culture, you can easily addopt *Polyglot Technologies*. The fact that our architecture now reliece on multiple distributed services, it give us the advantage of choosing the right/prefered technology stack for each individual service. How can you do this ? because each service needs to be loosely coupled and independently maintaned, this gives you the posibility to choose the stacl that fits for your service, while communication will be handled by some standard format(JSON, XML, Binary, etc).  
+
+    Say your team needs to build two services each one with different requirements: one needs to manage a ton of connection , for this one you choose to go with (Golang or Node.js), other one should have better performance (C++ may be a better option here). At this point the deccision is strictly handled by your team. But at least you can easly do it.
+
+
+- **Parallel Deployment**
+- **Maintability**
+- **Highly Scallable**
+- **Easy to develop**
+- **Increased Productivity**
+
 ### Drawbacks
+- **Complicated and Expensive**
+- **You need dev power**
+- **Client impressions**
+- **End-To-End Testing**
+- **Migrations**
+
+
+# Get Rid of Monoliths ?
+
+## Comparison with Microservices
+
+# Challanges
+
+## Communication
+
+### Synchronous
+
+### Asynchronous
+
+## Testing
+
+## Reliability
+
+## Concistency
+
+# Domain-Driven Design (DDD)
+
+# Databases
+
+
+## CAP Theorem
+
+## Eventual vs Strong Concistency
+
+## Do you still want to guarantee ACID ?
+
+
+# Local Development Environment
+
+# Monitoring and Tracking
+
+# What you should avoid !
+
+## Breaking contracts
+
+# Enough talking, show me some code!
+Ok, ok I got you, nobody is satisfied just with some theory , however it is very importat to understand the fundamental concepts first. Now it's time for some hands on practice. In this first part I developed an simple microservice e-commerce system with REST oriented communication.
+
+## Architecture
+
+Below you can see how many microservices I planned to build, each with a short description about their business domain they need should address.
+
+- **product-catalog-service** : stores products and any related data about them.
+- **order-service** : manages orders made by users.
+- **configuration-service** : distributes configuration to microservices during their bootstrap process.
+- **search-service** : search products and their detailes.
+- **shipping-service** : deals with shipping details, recipes, and delivery.
+- **payment-service** : handles prayment transaction and information.
+- **authentication-service** : handles user authentication and authorization.
+- **api-gateway** : implements the api gateway pattern ( entrypoint in our system, handles caching,security,compression,aggregationetc).
+- **web-ui** : the user interface application.
+
+
+## Development Stack
+
+- Docker
+- Golang
+- Ngnix
+- React.js
+- Redis
+- MongoDB
+- Postgresql
+
+## Building and Deployment
+
 
 ## References
 
