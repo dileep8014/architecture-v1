@@ -11,12 +11,11 @@ func main() {
 
 	api := router.Group("/api")
 	{
-
-		api.GET("/ping", routes.Ping)
+		routes.ApplyRoutes(api)
 	}
 
 	router.NoRoute(func(c *gin.Context) {
 		c.JSON(404, gin.H{"message": "Not found"})
 	})
-	router.Run(":8080")
+	router.Run(":8081")
 }
