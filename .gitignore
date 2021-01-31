@@ -15,4 +15,5 @@
 # Test binary, built with `go test -c`
 *.test
 
-
+# Vendor Dependenvies for local deployment
+vendor/

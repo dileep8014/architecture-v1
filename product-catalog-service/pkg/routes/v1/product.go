@@ -8,12 +8,14 @@ import (
 //
 func ApplyProductRoutes(r *gin.RouterGroup) {
 
+	controller := new(controllers.ProductController)
+
 	product := r.Group("/product")
 	{
-		product.GET("/", controllers.GetAllProducts)
-		product.GET("/:id", controllers.GetProductByID)
-		product.POST("/:id", controllers.CreateProduct)
-		product.DELETE("/:id", controllers.DeleteProduct)
-		product.PUT("/:id", controllers.UpdateProduct)
+		product.GET("/", controller.GetAllProducts)
+		product.GET("/:id", controller.GetProductByID)
+		product.POST("/:id", controller.CreateProduct)
+		product.DELETE("/:id", controller.DeleteProduct)
+		product.PUT("/:id", controller.UpdateProduct)
 	}
 }

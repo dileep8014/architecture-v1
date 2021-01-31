@@ -1,4 +1,4 @@
-package repository
+package db
 
 import (
 	"time"
@@ -6,13 +6,13 @@ import (
 	"gopkg.in/mgo.v2"
 )
 
-// DBConnection defines connection detailes
-type DBConnection struct {
+// Connection defines connection detailes
+type Connection struct {
 	session *mgo.Session
 }
 
 // NewConnection establishes a new connection to a particular mongo database
-func NewConnection(host string, dbName string) (conn *DBConnection) {
+func NewConnection(host string, dbName string) (conn *Connection) {
 
 	info := &mgo.DialInfo{
 
@@ -35,17 +35,18 @@ func NewConnection(host string, dbName string) (conn *DBConnection) {
 		panic(err)
 	}
 
-	conn = &DBConnection{session}
+	conn = &Connection{session}
 	return conn
 }
 
-// Use retrieves a connection to a mongo collection
-func (conn *DBConnection) Use(dbName, docName string) (collection *mgo.Collection) {
-	return conn.session.DB(dbName).C(docName)
+// Use retrieves a connection to a mongo collection always use the default db
+// since we use just one
+func (conn *Connection) Use(docName string) (collection *mgo.Collection) {
+	return conn.session.DB("").C(docName)
 }
 
 // Close handles closing a database connection session
-func (conn *DBConnection) Close() {
+func (conn *Connection) Close() {
 	conn.session.Close()
 	return
 }
